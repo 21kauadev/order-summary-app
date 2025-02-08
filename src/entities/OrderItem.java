@@ -7,9 +7,6 @@ public class OrderItem {
     // associação
     private Product product;
 
-    public OrderItem() {
-    }
-
     public OrderItem(int quantity, double price, Product product) {
         this.quantity = quantity;
         this.price = price;

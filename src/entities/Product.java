@@ -4,7 +4,8 @@ public class Product {
     private String name;
     private Double price;
 
-    public Product() {
+    public Product(String name) {
+        this.name = name;
     }
 
     public Product(String name, double price) {
