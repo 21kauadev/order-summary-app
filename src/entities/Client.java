@@ -7,6 +7,9 @@ public class Client {
     private String email;
     private LocalDate birthDate;
 
+    // não faz sentido haver um client sem nome, email ou data de nascimento. por
+    // isso nao usei sobrecarga de construtores
+
     public Client(String name, String email, LocalDate birthDate) {
         this.name = name;
         this.email = email;

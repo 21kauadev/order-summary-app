@@ -7,6 +7,10 @@ public class OrderItem {
     // associação
     private Product product;
 
+    // não faz sentido haver um OrderItem sem quantidade, price ou uma instância
+    // de produto (que aponta pra qual produto é) por
+    // isso nao usei sobrecarga de construtores
+
     public OrderItem(int quantity, double price, Product product) {
         this.quantity = quantity;
         this.price = price;

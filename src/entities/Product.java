@@ -4,6 +4,9 @@ public class Product {
     private String name;
     private Double price;
 
+    // não faz sentido haver um product nulo, por isso usei sobrecarga de
+    // construtores permitindo que apenas o preço seja opcional.
+
     public Product(String name) {
         this.name = name;
     }
