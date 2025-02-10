@@ -1,12 +1,16 @@
 package entities;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 import entities.enums.OrderStatus;
 
 public class Order {
+    private static DateTimeFormatter formatMoment = DateTimeFormatter.ofPattern("dd/MM/yyyy, HH:mm:ss");
+    private static DateTimeFormatter formatBirthDate = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
     private LocalDateTime moment;
     private OrderStatus status;
 
@@ -51,9 +55,23 @@ public class Order {
         this.orderItems.remove(item);
     }
 
+    public double total() {
+        int sum = 0;
+        for (int i = 0; i < orderItems.size(); i++) {
+            sum += orderItems.get(i).subtotal();
+        }
+
+        return sum;
+    }
+
     public String toString() {
-        return String.format("Order moment: %s\n Order status: %s\n Client: %s (%s) - %s\n Order Items:\n %s",
-                this.moment,
-                this.status, this.client.getName(), this.client.getBirthDate(), this.client.getEmail(), orderItems);
+        String formattedMoment = formatMoment.format(moment);
+        String formattedBirthDate = formatBirthDate.format(this.client.getBirthDate());
+
+        return String.format(
+                "Order moment: %s%n Order status: %s%n Client: %s (%s) - %s%n Order Items:%n %s%n, Total Price: %.2f",
+                formattedMoment,
+                this.status, this.client.getName(), formattedBirthDate, this.client.getEmail(), orderItems,
+                this.total());
     }
 }

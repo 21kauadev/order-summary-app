@@ -61,7 +61,7 @@ public class App {
         }
 
         System.out.println("ORDER SUMMARY: ");
-        System.out.print(order);
+        System.out.println(order);
 
         sc.close();
     }
