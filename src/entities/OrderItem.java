@@ -36,4 +36,9 @@ public class OrderItem {
     public Double subtotal() {
         return this.quantity * this.price;
     }
+
+    public String toString() {
+        return String.format("%s, $%.2f, Quantity: %d, Subtotal: $%.2f%n", this.product.getName(), this.price,
+                this.quantity, this.subtotal());
+    }
 }

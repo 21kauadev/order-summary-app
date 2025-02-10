@@ -52,7 +52,7 @@ public class Order {
     }
 
     public String toString() {
-        return String.format("Order moment: %s\n Order status: %s\n Client: %s (%s) - %s\n Order Items: %s",
+        return String.format("Order moment: %s\n Order status: %s\n Client: %s (%s) - %s\n Order Items:\n %s",
                 this.moment,
                 this.status, this.client.getName(), this.client.getBirthDate(), this.client.getEmail(), orderItems);
     }
