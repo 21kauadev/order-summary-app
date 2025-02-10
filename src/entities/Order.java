@@ -50,4 +50,10 @@ public class Order {
     public void removeItem(OrderItem item) {
         this.orderItems.remove(item);
     }
+
+    public String toString() {
+        return String.format("Order moment: %s\n Order status: %s\n Client: %s (%s) - %s\n Order Items: %s",
+                this.moment,
+                this.status, this.client.getName(), this.client.getBirthDate(), this.client.getEmail(), orderItems);
+    }
 }
