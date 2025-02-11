@@ -60,8 +60,17 @@ public class App {
             // legal, né?
         }
 
+        System.out.println();
         System.out.println("ORDER SUMMARY: ");
-        System.out.println(order);
+
+        System.out.print(order);
+
+        System.out.println("Order items: ");
+        for (int i = 0; i < order.getOrderItems().size(); i++) {
+            System.out.print(order.getOrderItems().get(i));
+        }
+
+        System.out.printf("Total price: %.2f", order.total());
 
         sc.close();
     }

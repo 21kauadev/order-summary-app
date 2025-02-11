@@ -69,9 +69,8 @@ public class Order {
         String formattedBirthDate = formatBirthDate.format(this.client.getBirthDate());
 
         return String.format(
-                "Order moment: %s%n Order status: %s%n Client: %s (%s) - %s%n Order Items:%n %s%n, Total Price: %.2f",
+                "Order moment: %s%nOrder status: %s%nClient: %s (%s) - %s%n",
                 formattedMoment,
-                this.status, this.client.getName(), formattedBirthDate, this.client.getEmail(), orderItems,
-                this.total());
+                this.status, this.client.getName(), formattedBirthDate, this.client.getEmail());
     }
 }
